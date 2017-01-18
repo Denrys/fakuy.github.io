@@ -1,0 +1,1104 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="note," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Git 安装与设置Ubuntu或是Debian安装git
+sudo apt-get install git
+或是直接通过源码安装。先从Git官网下载源码，然后解压，依次输入：./config，make，sudo make install这几个命令安装就好了。
+$ cd ~/. ssh #检查本机已存在的ssh密钥
+如果没有，打开终端输入
+ssh-keygen -t rsa -C &amp;quot;邮件地">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/01/18/Git/index.html">
+<meta property="og:site_name" content="Fakuy's Blog">
+<meta property="og:description" content="Git 安装与设置Ubuntu或是Debian安装git
+sudo apt-get install git
+或是直接通过源码安装。先从Git官网下载源码，然后解压，依次输入：./config，make，sudo make install这几个命令安装就好了。
+$ cd ~/. ssh #检查本机已存在的ssh密钥
+如果没有，打开终端输入
+ssh-keygen -t rsa -C &amp;quot;邮件地">
+<meta property="og:updated_time" content="2017-01-18T13:57:01.016Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git学习笔记">
+<meta name="twitter:description" content="Git 安装与设置Ubuntu或是Debian安装git
+sudo apt-get install git
+或是直接通过源码安装。先从Git官网下载源码，然后解压，依次输入：./config，make，sudo make install这几个命令安装就好了。
+$ cd ~/. ssh #检查本机已存在的ssh密钥
+如果没有，打开终端输入
+ssh-keygen -t rsa -C &amp;quot;邮件地">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6324812946912314000',
+      author: 'Fakuy'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/18/Git/"/>
+
+
+
+
+
+  <title> Git学习笔记 | Fakuy's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Fakuy's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/18/Git/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Fakuy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Fakuy's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Fakuy's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Git学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-18T20:52:26+08:00">
+                2017-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/01/18/Git/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/18/Git/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Git-安装与设置"><a href="#Git-安装与设置" class="headerlink" title="Git 安装与设置"></a>Git 安装与设置</h1><p>Ubuntu或是Debian安装git</p>
+<pre><code>sudo apt-get install git
+</code></pre><p>或是直接通过源码安装。先从Git官网下载源码，然后解压，依次输入：./config，make，sudo make install这几个命令安装就好了。</p>
+<pre><code>$ cd ~/. ssh #检查本机已存在的ssh密钥
+</code></pre><p>如果没有，打开终端输入</p>
+<pre><code>ssh-keygen -t rsa -C &quot;邮件地址&quot; 
+</code></pre><p>然后三次回车，生成你的ssh公钥，</p>
+<blockquote>
+<p>复制.ssh目录下的id_rsa.pub文件的内容，登录github官网，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key。将复制的内容粘贴进key那里，title随便填。</p>
+</blockquote>
+<pre><code>$ ssh -T git@github.com # 测试注意邮箱地址不用改
+</code></pre><a id="more"></a>
+<p>  测试是否成功，碰见问题输入yes，如果终端出现</p>
+<pre><code>Hi youname! You’ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre><p>代表SSH配置成功，这样可以通过SSH，在本地和github进行数据文件的传输。</p>
+<p>安装完成后，还需要最后一步设置，在命令行输入：</p>
+<pre><code>git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;email@example.com&quot;
+</code></pre><p>这是让github确定你的身份。</p>
+<h1 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h1><p>选定一个文件夹，最好是空的，无其他文件。</p>
+<pre><code>git  init  #创建版本库，把这个目录变成Git可以管理的仓库
+git add name   #把文件添加进仓库，可反复多次使用，添加多个文件
+git  commit -m &quot;wrote a readme file&quot;  
+#添加备注，-m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录
+git status  #显示当前仓库的状态，显示有没有被修改的文件或是需要提交的文件
+git diff #用于比较两次修改的差异
+</code></pre><p>git status告诉我们，将要被提交的修改包括readme.txt，下一步，就可以放心地提交了：</p>
+<pre><code>$ git commit -m &quot;add distributed&quot;
+[master ea34578] add distributed
+1 file changed, 1 insertion(+), 1 deletion(-)
+</code></pre><p>提交后，我们再用git status命令看看仓库的当前状态：</p>
+<pre><code>$ git status
+# On branch master
+nothing to commit (working directory clean)
+</code></pre><p>干净无文件要提交的工作区。</p>
+<h1 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h1><blockquote>
+<p>如果改错了文件，找回最近的版本，使用git  log查看版本历史</p>
+</blockquote>
+<pre><code>commit 862d2f4d0571faaeb0aa8b8d4f6444616eff6963
+Author: Fakuy &lt;835185778@qq.com&gt;
+Date:   Wed Jan 18 15:20:19 2017 +0800
+
+append GL
+
+commit 9db1540aae0524fc3bf8b6875fa71b94ca448195
+Author: Fakuy &lt;835185778@qq.com&gt;
+Date:   Wed Jan 18 15:17:21 2017 +0800
+
+add distributed
+
+commit 97c79fbf719c3a979aa7106b26e78bb8d78621ff
+Author: Fakuy &lt;835185778@qq.com&gt;
+Date:   Wed Jan 18 15:09:54 2017 +0800
+
+wrote a readme file
+(END)
+</code></pre><blockquote>
+<p>git log命令显示从最近到最远的提交，如果改的次数多，可以加上<em>–pretty=oneline</em>参数</p>
+</blockquote>
+<pre><code>$git log --pretty=oneline
+
+862d2f4d0571faaeb0aa8b8d4f6444616eff6963 append GL
+9db1540aae0524fc3bf8b6875fa71b94ca448195 add distributed
+97c79fbf719c3a979aa7106b26e78bb8d78621ff wrote a readme file
+(END)
+</code></pre><p>这样看起来就简洁明了了。</p>
+<blockquote>
+<p>你看到的一大串类似 862d2f…ff6963的是commit id（版本号），是一个SHA1计算出来的一个非常大的数字，用十六进制表示</p>
+</blockquote>
+<h1 id="退回上个版本"><a href="#退回上个版本" class="headerlink" title="退回上个版本"></a>退回上个版本</h1><p>在Git中，用HEAD表示当前版本，也就是最新的提交862d2f…ff6963,上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。</p>
+<pre><code>$ git reset --hard HEAD^                                      
+HEAD 现在位于 9db1540 add distributed
+</code></pre><p>，在git  log  看一下</p>
+<pre><code>commit 9db1540aae0524fc3bf8b6875fa71b94ca448195
+Author: Fakuy &lt;835185778@qq.com&gt;
+Date:   Wed Jan 18 15:17:21 2017 +0800
+
+add distributed
+
+commit 97c79fbf719c3a979aa7106b26e78bb8d78621ff
+Author: Fakuy &lt;835185778@qq.com&gt;
+Date:   Wed Jan 18 15:09:54 2017 +0800
+
+wrote a readme file
+(END)
+</code></pre><h1 id="恢复最新版本"><a href="#恢复最新版本" class="headerlink" title="恢复最新版本"></a>恢复最新版本</h1><p>最初的版本已经消失了，如果想要回去，<br>只要上面的命令行窗口还没有被关掉，你就可以顺着往上找，找到那个append GPL的commit id是862d2f4d…，于是就可以指定回到未来的某个版本：</p>
+<pre><code> $ git reset --hard 862d2f4d057                            
+HEAD 现在位于 862d2f4 append GL
+</code></pre><blockquote>
+<p>版本号没必要写全，前几位就可以了，Git会自动去找。当然也不能只写前一两位，因为Git可能会找到多个版本号，就无法确定是哪一个了。</p>
+</blockquote>
+<p>然后看一下git log </p>
+<pre><code>commit 862d2f4d0571faaeb0aa8b8d4f6444616eff6963
+Author: Fakuy &lt;835185778@qq.com&gt;
+Date:   Wed Jan 18 15:20:19 2017 +0800
+
+append GL
+
+commit 9db1540aae0524fc3bf8b6875fa71b94ca448195
+Author: Fakuy &lt;835185778@qq.com&gt;
+Date:   Wed Jan 18 15:17:21 2017 +0800
+
+add distributed
+
+commit 97c79fbf719c3a979aa7106b26e78bb8d78621ff
+Author: Fakuy &lt;835185778@qq.com&gt;
+Date:   Wed Jan 18 15:09:54 2017 +0800
+
+wrote a readme file
+(END)
+</code></pre><p>最新的版本就回来了。</p>
+<p>如果你回退到了某个版本，不巧关闭了电脑，找不到以前的新版本的commit id怎么办？<br>Git提供了一个命令git reflog用来记录你的每一次命令：</p>
+<pre><code>$git reflog
+
+9db1540 HEAD@{1}: reset: moving to HEAD^
+862d2f4 HEAD@{2}: commit: append GL
+9db1540 HEAD@{3}: commit: add distributed
+97c79fb HEAD@{4}: commit (initial): wrote a readme file
+</code></pre><p>第二条append GL代表回退前的最新，前面的代表它的commit  id。然后</p>
+<pre><code>fakuy:learn/ (master) $ git reset --hard 862d2f4d057                            
+HEAD 现在位于 862d2f4 append GL
+</code></pre><h1 id="工作暂存区"><a href="#工作暂存区" class="headerlink" title="工作暂存区"></a>工作暂存区</h1><blockquote>
+<p>git分为工作区，暂存区，分支区</p>
+</blockquote>
+<p>前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：</p>
+<p>第一步是用git add把文件添加进去，实际上就是把文件修改添加到暂存区；</p>
+<p>第二步是用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p>
+<p>用git diff HEAD – name.txt命令可以查看工作区和版本库里面最新版本的区别</p>
+<pre><code>git checkout -- file   #可以丢弃工作区的修改
+git reset HEAD file...  # 把文件撤出暂存区，重新放回工作区
+</code></pre><p>#删除文件的操作<br>在Git中，删除也是一个修改操作，我们实战一下，先添加一个新文件test.txt到Git并且提交：</p>
+<pre><code>$ git add test.txt
+$ git commit -m &quot;add test.txt
+#[master 94cdc44] add test.txt
+#1 file changed, 1 insertion(+)
+#create mode 100644 test.txt
+</code></pre><blockquote>
+<p>在文件管理器删除文件，Git知道你删除了文件，因此，工作区和版本库就不一致了，git status命令会立刻告诉你哪些文件被删除了：</p>
+</blockquote>
+<pre><code>$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)
+#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+#
+#       deleted:    test.txt
+#
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre><p>现在你有两个选择，一是确实要从版本库中删除该文件，那就用命令git rm删掉，并且git commit：</p>
+<pre><code>$ git rm test.txt
+rm &apos;test.txt&apos;
+$ git commit -m &quot;remove test.txt&quot;
+[master d17efd8] remove test.txt
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 test.txt
+</code></pre><p>现在，文件就从版本库中被删除了。</p>
+<blockquote>
+<p>另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：</p>
+</blockquote>
+<pre><code>$ git checkout -- test.txt
+</code></pre><p>git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
+<h1 id="链接远程仓库"><a href="#链接远程仓库" class="headerlink" title="链接远程仓库"></a>链接远程仓库</h1><p>在github网站上刚创建一个远程仓库了learn,进入仓库后,页面会显示</p>
+<pre><code>echo &quot;# learn&quot; &gt;&gt; README.md
+git init
+git add README.md
+git commit -m &quot;first commit&quot;
+git remote add origin git@github.com:Fakuy/learn.git
+git push -u origin master
+</code></pre><p>  GitHub告诉我们，可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。添加后，远程库的名字就是origin，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库。</p>
+<pre><code>$  git remote add origin git@github.com:Fakuy/learn.git
+ $ git push -u origin master
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (19/19), done.
+    Writing objects: 100% (19/19), 13.73 KiB, done.
+    Total 23 (delta 6), reused 0 (delta 0)
+    To git@github.com:michaelliao/learngit.git
+     * [new branch]      master -&gt; master
+    Branch master set up to track remote branch master from origin.
+</code></pre><blockquote>
+<p>把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。</p>
+</blockquote>
+<p>由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
+<p>从现在起，只要本地作了提交，就可以通过命令：</p>
+<pre><code>$ git push origin master
+</code></pre><p>把本地master分支的最新修改推送至GitHub，现在，你就拥有了真正的分布式版本库！</p>
+<p>小结：</p>
+<p>要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；</p>
+<p>关联后，使用命令git push -u origin master第一次推送master分支的所有内容；</p>
+<p>克隆git clone   git@github.com:Fakuy/learn.git</p>
+<h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><blockquote>
+<p>创建分支并切换</p>
+</blockquote>
+<pre><code>$git branch dev
+$git checkout dev
+Switched to branch &apos;dev&apos;
+</code></pre><p>git checkout命令加上-b参数表示创建并切换，相当于以下两条命令：</p>
+<pre><code>$ git checkout -b dev
+</code></pre><p>查看的当前分支</p>
+<pre><code>$ git branch
+* dev
+master
+</code></pre><p>然后，我们就可以在dev分支上正常提交，比如对readme.txt做个修改，加上一行：</p>
+<p>Creating a new branch is quick.</p>
+<p>然后提交：</p>
+<pre><code>$ git add readme.txt 
+$ git commit -m &quot;branch test&quot;
+[dev fec145a] branch test
+ 1 file changed, 1 insertion(+)
+</code></pre><p>现在，dev分支的工作完成，我们就可以切换回master分支：</p>
+<pre><code>$ git checkout master
+Switched to branch &apos;master&apos;
+</code></pre><p>切换回master分支后，再查看一个readme.txt文件，刚才添加的内容不见了！因为那个提交是在dev分支上，而master分支此刻的提交点并没有变：</p>
+<p>现在，我们把dev分支的工作成果合并到master分支上：</p>
+<pre><code>$git merge dev
+Updating d17efd8..fec145a
+Fast-forward
+readme.txt |    1 +
+1 file changed, 1 insertion(+)
+</code></pre><blockquote>
+<p>git merge命令用于合并指定分支到当前分支。合并后，再查看readme.txt的内容，就可以看到，和dev分支的最新提交是完全一样的。</p>
+</blockquote>
+<p> 合并完成后，就可以放心地删除dev分支了：</p>
+<pre><code>$ git branch -d dev
+Deleted branch dev (was fec145a).
+</code></pre><h1 id="分支冲突"><a href="#分支冲突" class="headerlink" title="分支冲突"></a>分支冲突</h1><p>如果我们在feature1分支修改了readme.txt并保存，在master分支也改了readme.txt。当<br>合并分支时</p>
+<pre><code>$git merge feature1
+Auto-merging readme.txt
+CONFLICT (content): Merge conflict in readme.txt
+Automatic merge failed; fix conflicts and then commit the result.
+</code></pre><p>Git告诉我们，readme.txt文件存在冲突，必须手动解决冲突后再提交。git status也可以告诉我们冲突的文件：</p>
+<p>我们可以直接查看readme.txt的内容：</p>
+<pre><code>Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes of files.
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Creating a new branch is quick &amp; simple.
+=======
+Creating a new branch is quick AND simple.
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature1
+</code></pre><p>Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支的内容，我们修改如下后保存：</p>
+<blockquote>
+<p>用git log –graph命令可以看到分支合并图。</p>
+</blockquote>
+<h1 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h1><p>准备合并dev分支，请注意–no-ff参数，表示禁用Fast forward：</p>
+<pre><code>$ git merge --no-ff -m &quot;merge with no-ff&quot; dev
+Merge made by the &apos;recursive&apos; strategy.
+readme.txt |    1 +
+1 file changed, 1 insertion(+)
+</code></pre><blockquote>
+<p>因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去。</p>
+</blockquote>
+<p>合并后，我们用git log看看分支历史：</p>
+<pre><code>$ git log --graph --pretty=oneline --abbrev-commit
+*   7825a50 merge with no-ff
+|\
+| * 6224937 add merge
+|/
+*   59bc1cb conflict fixed
+</code></pre><p>合并分支时，加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并    </p>
+<h1 id="BUG分支"><a href="#BUG分支" class="headerlink" title="BUG分支"></a>BUG分支</h1><p>如果你正在工作着，写了一半的项目，Boss突然让你修复一个bug,手头的项目没有完成不能提交怎么办？幸好，Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：</p>
+<pre><code>$ git stash
+Saved working directory and index state WIP on dev: 6224937 add merge
+HEAD is now at 6224937 add merge
+</code></pre><p>这样当前工作就隐藏了。</p>
+<blockquote>
+<p>工作区是干净的，刚才的工作现场存到哪去了？用git stash list命令看看：</p>
+</blockquote>
+<pre><code>$ git stash list
+stash@{0}: WIP on dev: 6224937 add merge
+</code></pre><p>一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；</p>
+<p>另一种方式是用git stash pop，恢复的同时把stash内容也删了：</p>
+<p>你可以多次stash，恢复的时候，先用git stash list查看，然后恢复指定的stash，用命令：</p>
+<pre><code>$ git stash apply stash@{0}
+</code></pre><h1 id="Feature分支"><a href="#Feature分支" class="headerlink" title="Feature分支"></a>Feature分支</h1><p>删除一个不再需要且未合并的分支feature-vulcan</p>
+<pre><code> git branch -d feature-vulcan
+error: The branch &apos;feature-vulcan&apos; is not fully merged.
+If you are sure you want to delete it, run &apos;git branch -D feature-vulcan&apos;.
+</code></pre><p>销毁失败。Git友情提醒，feature-vulcan分支还没有被合并，如果删除，将丢失掉修改，如果要强行删除，需要使用命令git branch -D feature-vulcan。<br>现在我们强行删除：</p>
+<pre><code>$ git branch -D feature-vulcan
+Deleted branch feature-vulcan (was 756d4af).
+</code></pre><h1 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h1><p>你从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin。要查看远程库的信息，用git remote：</p>
+<pre><code>$ git remote
+origin
+</code></pre><p>或者，用git remote -v显示更详细的信息：</p>
+<pre><code>$ git remote -v
+origin  git@github.com:michaelliao/learngit.git (fetch)
+origin  git@github.com:michaelliao/learngit.git (push)
+</code></pre><p>上面显示了可以抓取和推送的origin的地址。如果没有推送权限，就看不到push的地址。<br>推送分支</p>
+<blockquote>
+<p>推送分支，就是把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上：</p>
+</blockquote>
+<pre><code>$ git push origin master
+</code></pre><p>如果要推送其他分支，比如dev，就改成：</p>
+<pre><code>$ git push origin dev
+</code></pre><p> 查看远程库信息，使用git remote -v；</p>
+<p>本地新建的分支如果不推送到远程，对其他人就是不可见的；</p>
+<p>小结：</p>
+<p>从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；</p>
+<p>在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；</p>
+<p>建立本地分支和远程分支的关联，使用git branch –set-upstream branch-name origin/branch-name；</p>
+<p>从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。</p>
+<h1 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h1><pre><code>命令git tag &lt;name&gt;用于新建一个标签，默认为HEAD，也可以指定一个commit id；
+
+git tag -a &lt;tagname&gt; -m &quot;blablabla...&quot;可以指定标签信息；
+
+git tag -s &lt;tagname&gt; -m &quot;blablabla...&quot;可以用PGP签名标签；
+
+命令git tag可以查看所有标签。
+
+
+
+命令git push origin &lt;tagname&gt;可以推送一个本地标签；
+
+命令git push origin --tags可以推送全部未推送过的本地标签；
+
+命令git tag -d &lt;tagname&gt;可以删除一个本地标签；
+
+命令git push origin :refs/tags/&lt;tagname&gt;可以删除一个远程标签。
+</code></pre><h1 id="忽略特殊文件"><a href="#忽略特殊文件" class="headerlink" title="忽略特殊文件"></a>忽略特殊文件</h1><p>特殊文件就是git无法识别的文件，例如数据库配置文件，word文档等。每次git status都会显示Untracked files，这个问题解决起来也很简单，在Git工作区的根目录下创建一个特殊的.gitignore文件，然后把要忽略的文件名填进去，Git就会自动忽略这些文件。</p>
+<p>不需要从头写.gitignore文件，GitHub已经为我们准备了各种配置文件，只需要组合一下就可以使用了。所有配置文件可以直接在线浏览：<a href="https://github.com/github/gitignore" target="_blank" rel="external">https://github.com/github/gitignore</a></p>
+<p>有些时候，你想添加一个文件到Git，但发现添加不了，原因是这个文件被.gitignore忽略了：</p>
+<pre><code>$ git add App.class
+The following paths are ignored by one of your .gitignore files:
+App.class
+Use -f if you really want to add them.
+</code></pre><p>如果你确实想添加该文件，可以用-f强制添加到Git：</p>
+<pre><code>$ git add -f App.class
+</code></pre><p>或者你发现，可能是.gitignore写得有问题，需要找出来到底哪个规则写错了，可以用git check-ignore命令检查：</p>
+<pre><code>$ git check-ignore -v App.class
+.gitignore:3:*.class    App.class
+</code></pre><p>Git会告诉我们，.gitignore的第3行规则忽略了该文件，于是我们就可以知道应该修订哪个规则</p>
+<blockquote>
+<p>本篇笔记学习整理自廖老师的博客，感兴趣的可以去看看<a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">http://www.liaoxuefeng.com/</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/17/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/18/Git/"
+           data-title="Git学习笔记" data-url="http://yoursite.com/2017/01/18/Git/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Fakuy" />
+          <p class="site-author-name" itemprop="name">Fakuy</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/fakuy" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/your-user-name" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/your-user-name" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lezhi.ren/" title="乐之人" target="_blank">乐之人</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://fakuy.cn/" title="不知所谓" target="_blank">不知所谓</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-安装与设置"><span class="nav-number">1.</span> <span class="nav-text">Git 安装与设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建版本库"><span class="nav-number">2.</span> <span class="nav-text">创建版本库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看版本"><span class="nav-number">3.</span> <span class="nav-text">查看版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#退回上个版本"><span class="nav-number">4.</span> <span class="nav-text">退回上个版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恢复最新版本"><span class="nav-number">5.</span> <span class="nav-text">恢复最新版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工作暂存区"><span class="nav-number">6.</span> <span class="nav-text">工作暂存区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接远程仓库"><span class="nav-number">7.</span> <span class="nav-text">链接远程仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支管理"><span class="nav-number">8.</span> <span class="nav-text">分支管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支冲突"><span class="nav-number">9.</span> <span class="nav-text">分支冲突</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支管理策略"><span class="nav-number">10.</span> <span class="nav-text">分支管理策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BUG分支"><span class="nav-number">11.</span> <span class="nav-text">BUG分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Feature分支"><span class="nav-number">12.</span> <span class="nav-text">Feature分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多人协作"><span class="nav-number">13.</span> <span class="nav-text">多人协作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标签管理"><span class="nav-number">14.</span> <span class="nav-text">标签管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#忽略特殊文件"><span class="nav-number">15.</span> <span class="nav-text">忽略特殊文件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fakuy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"fakuy"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+	
+
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/demo.js"></script>
+</body>
+</html>
